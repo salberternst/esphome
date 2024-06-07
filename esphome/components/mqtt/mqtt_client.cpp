@@ -641,8 +641,8 @@ void MQTTClientComponent::set_on_disconnect(mqtt_on_disconnect_callback_t &&call
 
 #if ASYNC_TCP_SSL_ENABLED
 void MQTTClientComponent::add_ssl_fingerprint(const std::array<uint8_t, SHA1_SIZE> &fingerprint) {
-  this->mqtt_backend_.setSecure(true);
-  this->mqtt_backend_.addServerFingerprint(fingerprint.data());
+  this->mqtt_backend_.set_secure(true);
+  this->mqtt_backend_.add_server_fingerprint(fingerprint.data());
 }
 #endif
 
